@@ -1,6 +1,6 @@
 # Hands-On-Cloud-Native-Applications-with-Java-and-Quarkus
 Hands-On Cloud-Native Applications with Java and Quarkus, published by Packt
-# 
+#
 
 <a href=""><img src="" alt="" height="256px" align="right"></a>
 
@@ -22,7 +22,7 @@ This book covers the following exciting features:
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1838821473) today!
 
-* <a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
+* <a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png"
 alt="https://www.packtpub.com/" border="5" /></a>
 
 ## Instructions and Navigations
@@ -38,7 +38,7 @@ The code will look like the following:
 ```
 
 **Following is what you need for this book:**
-The book is for Java developers and software architects?who are interested in learning a promising microservice architecture for building reliable and robust applications. Knowledge of Java, Spring Framework, and REST APIs is assumed.	
+The book is for Java developers and software architects?who are interested in learning a promising microservice architecture for building reliable and robust applications. Knowledge of Java, Spring Framework, and REST APIs is assumed.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-).
 ### Software and Hardware List
@@ -63,3 +63,16 @@ He has spent years as a software consultant, where he has enabled many successfu
 [Click here](https://docs.google.com/forms/d/e/1FAIpQLSdy7dATC6QmEL81FIUuymZ0Wy9vH1jHkvpY57OiMeKGqib_Ow/viewform) if you have any feedback or suggestions.
 
 
+
+### Created a base image for multistage build
+* create a dockerfile inside ~/.m2
+```dockerfile
+FROM quay.io/quarkus/centos-quarkus-maven:20.0.0-java8
+COPY repository /opt/repository
+COPY maven-settings-docker.xml /opt/maven-settings.xml
+```
+* generate a base image
+```
+docker build -t quarkus/maven-base
+```
+* use the base image for multistaged builds
