@@ -8,8 +8,11 @@ A basic REST Service running on Quarkus.
 ----
 cd hello-rest
 
-mvn install quarkus:dev  
+mvn install quarkus:dev
 ----
 
 * Test the available endpoints at: http://localhost:8080
 
+[source,shell]
+ab -n 16400 -c 130 http://localhost:8080/helloworld/marcelo
+---
