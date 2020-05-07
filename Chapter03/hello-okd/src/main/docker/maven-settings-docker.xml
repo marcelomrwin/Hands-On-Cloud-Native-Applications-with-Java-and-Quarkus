@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+    <localRepository>/opt/repository</localRepository>
+    <profiles>
+        <profile>
+            <repositories>
+                <repository>
+                    <releases/>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>jboss-ea-repository</id>
+                    <name>A jboss-ea-repository</name>
+                    <url>https://maven.repository.redhat.com/earlyaccess/all</url>
+                </repository>
+                <repository>
+                    <releases/>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>maven central</id>
+                    <url>https://repo1.maven.org/maven2</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <releases/>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>jboss-groups-ea-plugin-repository</id>
+                    <name>A jboss-groups-ea-plugin-repository</name>
+                    <url>https://repository.jboss.org/nexus/content/groups/ea</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <releases/>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>jboss-ga-plugin-repository</id>
+                    <name>A jboss-groups-ea-plugin-repository</name>
+                    <url>http://maven.repository.redhat.com/techpreview/all</url>
+                </pluginRepository>
+            </pluginRepositories>
+            <id>jboss-ga-repository</id>
+        </profile>
+        <profile>
+            <repositories>
+                <repository>
+                    <releases>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>daily</updatePolicy>
+                    </snapshots>
+                    <id>redhat-ga-repository</id>
+                    <name>Red Hat GA repository</name>
+                    <url>https://maven.repository.redhat.com/ga/</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <releases>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>daily</updatePolicy>
+                    </snapshots>
+                    <id>redhat-ga-repository</id>
+                    <name>A Red Hat GA repository</name>
+                    <url>http://maven.repository.redhat.com/ga/</url>
+                </pluginRepository>
+            </pluginRepositories>
+            <id>redhat-ga-repository</id>
+        </profile>
+        <profile>
+            <repositories>
+                <repository>
+                    <releases>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>daily</updatePolicy>
+                    </snapshots>
+                    <id>redhat-ea-repository</id>
+                    <name>Red Hat EA repository</name>
+                    <url>https://mvnrepository.com/repos/redhat-earlyaccess</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <releases>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>daily</updatePolicy>
+                    </snapshots>
+                    <id>redhat-ea-repository</id>
+                    <name>A Red Hat EA repository</name>
+                    <url>https://mvnrepository.com/repos/redhat-earlyaccess</url>
+                </pluginRepository>
+            </pluginRepositories>
+            <id>redhat-ea-repository</id>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>redhat-ea-repository</activeProfile>        
+        <activeProfile>redhat-ga-repository</activeProfile>
+        <activeProfile>jboss-ga-repository</activeProfile>
+    </activeProfiles>
+    <pluginGroups>
+        <pluginGroup>org.apache.maven.plugins</pluginGroup>
+        <pluginGroup>org.codehaus.mojo</pluginGroup>
+    </pluginGroups>
+</settings>
